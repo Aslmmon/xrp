@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "1031703766400",
+    "firebase_url": "https://pinxrp-e5de4-default-rtdb.firebaseio.com",
+    "project_id": "pinxrp-e5de4",
+    "storage_bucket": "pinxrp-e5de4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031703766400:android:66ec6912f1875f442fcd65",
+        "android_client_info": {
+          "package_name": "com.pinxrp.xrp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031703766400-khffgiuu0aumbjuti38586jjva905ivq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pinxrp.xrp",
+            "certificate_hash": "6479971f48f17c7f0ecfedf0c295e098e89c5777"
+          }
+        },
+        {
+          "client_id": "1031703766400-pvb407glcdv51dam274dco2ep99idjvf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pinxrp.xrp",
+            "certificate_hash": "9de64b23c79768cc26089cd6ba541b224d15bdb9"
+          }
+        },
+        {
+          "client_id": "1031703766400-trhuogeu3d87r54cs2otfeee8iq5poug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pinxrp.xrp",
+            "certificate_hash": "79721888ecba8819b78d31857ff755541fb29ac9"
+          }
+        },
+        {
+          "client_id": "1031703766400-809reco6e1i5o6hjj0t11ot6q2s4r72k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjbx7aHUvSgc0R1r5RMvqBIANuML_b50s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031703766400-809reco6e1i5o6hjj0t11ot6q2s4r72k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

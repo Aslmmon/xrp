@@ -1,0 +1,13 @@
+{
+  "appprofile" : {
+    "fupdate" : 1,
+    "gn" : "NA",
+    "rupdate" : 1,
+    "timer" : 300,
+    "usercount" : 0
+  },
+  "refoffer" : {
+    "body" : "on Successful referral you will get 1.00000 DOGE",
+    "title" : "Refer Your Friends"
+  }
+}

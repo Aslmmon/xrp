@@ -1,0 +1,79 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Earn XRP Faucet - No Mining</string>
+    <string name="my_profile">My Profile</string>
+    <string name="payout_history">Payout History</string>
+    <string name="notification_empty">Nothing to see here.</string>
+    <string name="payout_empty">Nothing great ever come that easy</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="leaderboard">Top 100</string>
+    <string name="invite_earn"><![CDATA[Invite & Earn]]></string>
+    <string name="notifications">Notifications</string>
+    <string name="my_balance">My Balance</string>
+    <string name="default_value">0.00000000</string>
+    <string name="internet_msg">No Internet Connection</string>
+    <string name="support"><![CDATA[Social Media - Help]]></string>
+    <string name="view_in_blockchain">View In Blockchain</string>
+    <string name="wallet">Wallet</string>
+    <string name="referred">Referral</string>
+    <string name="claimed">Claimed</string>
+    <string name="agree">By clicking Sign in with Google, you agree to our terms and confirm that you have read our privacy policy and Terms</string>
+    <string name="claim_btc">Claim XRP NOW</string>
+    <string name="balance_info">You can withdraw amount after you reach minimum Payout Limit. Minimum Payout is "50 XRP Coins". Withdraw will be enabled here once you reach threshold.
+     If you used Binance.com then add via Tag Name </string>
+    <string name="wallet_hint">XRP WALLET CODE </string>
+    <string name="xrptag">TAG CODE</string>
+    <string name="request_withdraw">Request Withdraw</string>
+    <string name="lifetime_earning">Lifetime Earning</string>
+    <string name="suspended">Suspended</string>
+    <string name="active">ACTIVE</string>
+    <string name="faq">Frequently Asked Questions</string>
+    <string name="e_mail">Email Us for Help or Query</string>
+    <string name="pending">Pending</string>
+    <string name="success">Success</string>
+    <string name="failed">Failed</string>
+    <string name="force_update">To continue use this application, please update it to latest version.</string>
+    <string name="openDrawer" />
+    <string name="closeDrawer" />
+    <string name="enable_disable_notifications">Enable / disable Notifications</string>
+    <string name="push_messages">Push Messages</string>
+    <string name="cache_used">Cache Used</string>
+    <string name="app_version">App Version</string>
+    <string name="social">Social Media</string>
+    <string name="insta"><a href="https://www.instagram.com/earnxrp.app/">Instagram /EarnXrp.app</a></string>
+    <string name="telegram"><a href="https://t.me/EarnXrpApp/">https://t.me/earnxrpapp</a></string>
+
+
+    // TODO Update the credential fields below
+
+    <string name="client_auth">1031703766400-809reco6e1i5o6hjj0t11ot6q2s4r72k.apps.googleusercontent.com</string>
+    <!--
+    <string name="admob_id">ca-app-pub-1251981387881672~8972467659</string>
+    <string name="admob_banner">ca-app-pub-1251981387881672/6144136093</string>
+    <string name="admob_banner_main">ca-app-pub-1251981387881672/6144136093</string>
+    <string name="admob_interstitial">ca-app-pub-1251981387881672/8195584363</string>
+    <string name="admob_interstitial_main">ca-app-pub-1251981387881672/8195584363</string>
+    <string name="admob_rewarded">ca-app-pub-1251981387881672/4841650950</string>
+    -->
+
+    <string name="faq_url">https://www.pinuniq.com/earnxrp/faq.html</string>
+    <string name="xrp">https://www.pinuniq.com/earnxrp/faq.html</string>
+    <string name="privacy_url">https://www.pinuniq.com/earnxrp/faq.html</string>
+    <string name="invite_cap"><![CDATA[Earn XRP Coins Now! It is Free.. \n]]></string>
+    <string name="support_email">earnxrpapp@gmail.com</string>
+    <string name="notification_channel_name">XRP Faucet Channel</string>
+    <string name="default_notification_channel_id" translatable="false">btc_faucet_no_mining_default_channel</string>
+    <string name="title_activity_social">SocialActivity</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#90161617</color>
+    <color name="colorPrimaryDark">#90161617</color>
+    <color name="colorAccent">#B2000000</color>
+    <color name="colorSecondary">#b2d8f7</color>
+    <color name="colorPink">#ad2688</color>
+    <color name="colorYellow">#FFEB3B</color>
+    <color name="colorGreen">#FFD600</color>
+    <color name="colorWindow">#000000</color>
+    <color name="colorWindowUpper">#0D0E0E</color>
+    <color name="colorTextPrimary">#7db8ea</color>
+    <color name="colorTextSecondary">#5683a8</color>
+    <color name="colorIcon">#7db8ea</color>
+    <color name="transparent">#4A3E3E3E</color>
+    <color name="colorRed">#E53935</color>
+
+</resources>

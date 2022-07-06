@@ -1,0 +1,92 @@
+{
+  "rules": {
+    "appprofile": {
+        ".read": "auth.uid != null",
+        ".write": false,
+      
+    },
+    "earningprofile":{
+      ".read": "auth.uid != null",
+      ".indexOn": ["et"], 
+      "$UID":{
+        
+        ".write": "auth.uid == $UID",
+        "ecr":{
+          ".validate":"newData.val()==0"
+        },
+        "ec":{
+          ".validate":"newData.val()==0"
+        },
+        "er":{
+          ".validate":"newData.val()==0"
+        } 
+      }
+      
+    }, 
+    "notification": {
+      "$UID": {
+       
+        ".read": "auth.uid == $UID",
+        ".write": "auth.uid == $UID"
+        
+        
+      
+      }
+    },
+    "users": {
+      ".read": "auth.uid != null",
+        ".indexOn": ["ur"],
+      "$UID": {
+        
+        ".write": "auth.uid == $UID"
+      }
+    },
+     
+    "payouts": {
+      "$UID": {
+        ".read": "auth.uid == $UID",
+        ".write": "auth.uid == $UID"
+      }
+     
+    },
+      "userprofiles": {
+   "$UID": {
+        ".read": "auth.uid == $UID",
+        ".write": "auth.uid == $UID"
+      }
+   
+    },
+      "referral": {
+   
+        ".read": "auth.uid != null",
+        ".write": "auth.uid != null"
+   
+    },
+      "refoffer": {
+   
+        ".read": "auth.uid != null",
+        ".write": false
+   
+    },
+       "pending": {
+   
+        ".read": false,
+        ".write": false
+   
+    },
+      "support": {
+   
+        ".read": "auth.uid != null",
+        ".write": false
+   
+    },
+      "dc": {
+   
+        ".read": "auth.uid != null",
+        ".write": "auth.uid != null"
+   
+    }
+      
+       
+  }
+}
