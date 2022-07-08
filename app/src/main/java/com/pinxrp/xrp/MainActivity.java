@@ -223,8 +223,8 @@ public class MainActivity extends BaseActivity implements ConnectivityReceiver.C
                 startActivity(i);
 
                  */
-              //  showRewardedVideo();
-                showAppoDealRewardVideo();
+                showRewardedVideo();
+              //  showAppoDealRewardVideo();
 
                 //showAppoDaelBanner();
 
@@ -291,8 +291,8 @@ public class MainActivity extends BaseActivity implements ConnectivityReceiver.C
             @Override
             public void onClick(View view) {
                 if (isRewardedLoaded()) {
-                    showAppoDealRewardVideo();
-                    //showRewardedVideo();
+                    //showAppoDealRewardVideo();
+                    showRewardedVideo();
                 }
             }
         });

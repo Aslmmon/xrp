@@ -21,10 +21,13 @@
         android:supportsRtl="true"
 
         android:theme="@style/AppTheme">
+<!--        android:value="ca-app-pub-1836044331384375~2994881772"-->
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1836044331384375~2994881772"/>
+            android:value="ca-app-pub-5580537606944457~7422078221"
+
+            />
 
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

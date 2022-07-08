@@ -1,18 +1,18 @@
 package com.pinxrp.xrp;
 
 import android.app.ProgressDialog;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.appodeal.ads.Appodeal;
-import com.appodeal.ads.RewardedVideoCallbacks;
+
 import com.pinxrp.xrp.helper.AdsUtils;
 
 
 public abstract class BaseActivity extends AppCompatActivity implements AdsUtils.AdsStatus {
 
     private ProgressDialog mProgressDialog;
+
+
 
     public void showProgressDialog() {
         if (mProgressDialog == null) {
@@ -44,24 +44,24 @@ public abstract class BaseActivity extends AppCompatActivity implements AdsUtils
          *
          * Appodea.setTesting(false)
          */
-        Appodeal.setTesting(true);
-
-        Appodeal.initialize(this, "dcd4a159df076c6fb242d40a8cc8ccc3cac69462cf1d04c5", Appodeal.REWARDED_VIDEO | Appodeal.BANNER | Appodeal.INTERSTITIAL);
-        Appodeal.show(this, Appodeal.BANNER_BOTTOM);  // Display banner at the right of the screen
+//        Appodeal.setTesting(true);
+//
+//        Appodeal.initialize(this, "dcd4a159df076c6fb242d40a8cc8ccc3cac69462cf1d04c5", Appodeal.REWARDED_VIDEO | Appodeal.BANNER | Appodeal.INTERSTITIAL);
+//        Appodeal.show(this, Appodeal.BANNER_BOTTOM);  // Display banner at the right of the screen
     }
 
     public void showRewardedVideo() {
         AdsUtils.getInstance(this).showRewardedAd(this);
     }
 
-    public void showAppoDealRewardVideo() {
-        Appodeal.show(this, Appodeal.REWARDED_VIDEO);
-    }
-
-
-    public void showAppoDealIntersitial() {
-        Appodeal.show(this, Appodeal.INTERSTITIAL);
-    }
+//    public void showAppoDealRewardVideo() {
+//        Appodeal.show(this, Appodeal.REWARDED_VIDEO);
+//    }
+//
+//
+//    public void showAppoDealIntersitial() {
+//        Appodeal.show(this, Appodeal.INTERSTITIAL);
+//    }
 
 
     public void showInterstitialAd() {
@@ -86,9 +86,9 @@ public abstract class BaseActivity extends AppCompatActivity implements AdsUtils
     public void onBackPressed() {
 
        // if (isInterstitialLoaded()) {
-          //  showInterstitialAd();
-            showAppoDealIntersitial();
-        //}
+            showInterstitialAd();
+            //showAppoDealIntersitial();
+       // }
         finish();
     }
 }
