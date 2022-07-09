@@ -58,7 +58,7 @@ public class LeaderRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
 
         public void setImage(String image) {
-            Picasso.get().load(image).placeholder(R.drawable.user).fit().centerCrop().into(ci);
+            Picasso.with(mContext).load(image).placeholder(R.drawable.user).fit().centerCrop().into(ci);
         }
 
         public void setName(String name) {

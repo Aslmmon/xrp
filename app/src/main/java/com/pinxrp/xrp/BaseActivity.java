@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.pinxrp.xrp.helper.AdsUtils;
+import com.yodo1.mas.banner.Yodo1MasBannerAdSize;
+import com.yodo1.mas.banner.Yodo1MasBannerAdView;
 
 
 public abstract class BaseActivity extends AppCompatActivity implements AdsUtils.AdsStatus {
@@ -48,6 +50,11 @@ public abstract class BaseActivity extends AppCompatActivity implements AdsUtils
 //
 //        Appodeal.initialize(this, "dcd4a159df076c6fb242d40a8cc8ccc3cac69462cf1d04c5", Appodeal.REWARDED_VIDEO | Appodeal.BANNER | Appodeal.INTERSTITIAL);
 //        Appodeal.show(this, Appodeal.BANNER_BOTTOM);  // Display banner at the right of the screen
+
+//        Yodo1MasBannerAdView bannerAdView = new Yodo1MasBannerAdView(this);
+//        bannerAdView.setAdSize(Yodo1MasBannerAdSize.Banner);
+//        bannerAdView.loadAd();
+
     }
 
     public void showRewardedVideo() {

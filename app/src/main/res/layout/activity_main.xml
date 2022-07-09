@@ -465,15 +465,30 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <RelativeLayout
-            android:id="@+id/ly_banner"
-            android:layout_width="match_parent"
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/ly_banner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:gravity="center|bottom"-->
+<!--            android:layout_gravity="center|bottom"-->
+<!--            />-->
+        <com.yodo1.mas.banner.Yodo1MasBannerAdView
+            xmlns:masads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/yodo1_mas_banner"
+            android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center|bottom"
-            android:layout_gravity="center|bottom"
-            />
+            masads:adUnitId="ca-app-pub-5580537606944457~7422078221"
+            android:layout_gravity="center_horizontal|bottom"
+            masads:adSize="Banner" />
+
+        <com.yodo1.mas.nativeads.Yodo1MasNativeAdView
+            xmlns:masads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/yodo1_mas_native"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal|center"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -28,14 +29,17 @@ import android.telephony.TelephonyManager;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.guilhe.circularprogressview.CircularProgressView;
@@ -51,6 +55,13 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.banner.Yodo1MasBannerAdListener;
+import com.yodo1.mas.banner.Yodo1MasBannerAdSize;
+import com.yodo1.mas.banner.Yodo1MasBannerAdView;
+import com.yodo1.mas.error.Yodo1MasError;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdListener;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -121,6 +132,9 @@ public class MainActivity extends BaseActivity implements ConnectivityReceiver.C
     private Dialog dialog;
 
     private ProgressBar energy;
+    private RelativeLayout relativeLayout;
+    private  Yodo1MasBannerAdView yodo1MasBannerAdView;
+    private Yodo1MasNativeAdView nativeAdView;
 
 
     @Override
@@ -128,12 +142,23 @@ public class MainActivity extends BaseActivity implements ConnectivityReceiver.C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Yodo1Mas.getInstance().initMas(this, "ITp8nXaVxG", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+
+            }
+        });
         toolbar = findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
 
         // Initialize Unity Ads:
         loadBannerAd();
         showProgressDialog();
+//        relativeLayout = findViewById(R.id.ly_banner);
         mAuth = FirebaseAuth.getInstance();
         receiver = new ConnectivityReceiver();
         filter = new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE");
@@ -298,6 +323,62 @@ public class MainActivity extends BaseActivity implements ConnectivityReceiver.C
         });
 
 
+        loadAd();
+
+
+    }
+
+    private void loadAd() {
+        yodo1MasBannerAdView = findViewById(R.id.yodo1_mas_banner);
+        yodo1MasBannerAdView.setAdListener(new Yodo1MasBannerAdListener() {
+            @Override
+            public void onBannerAdLoaded(Yodo1MasBannerAdView bannerAdView) {
+                Log.e("yodo","banner loaded");
+            }
+
+            @Override
+            public void onBannerAdFailedToLoad(Yodo1MasBannerAdView bannerAdView, @NonNull Yodo1MasError error) {
+                Log.e("yodo","banner error failed to load" + " " + error.getMessage());
+
+            }
+
+            @Override
+            public void onBannerAdOpened(Yodo1MasBannerAdView bannerAdView) {
+                Log.e("yodo","banner opend");
+
+            }
+
+            @Override
+            public void onBannerAdFailedToOpen(Yodo1MasBannerAdView bannerAdView, @NonNull Yodo1MasError error) {
+                Log.e("yodo","banner error failed to open" + " " + error.getMessage());
+
+            }
+
+            @Override
+            public void onBannerAdClosed(Yodo1MasBannerAdView bannerAdView) {
+                Log.e("yodo","banner closed");
+
+            }
+        });
+
+        yodo1MasBannerAdView.loadAd();
+        Yodo1Mas.getInstance().showBannerAd(MainActivity.this, "mas_test");
+
+
+
+//        nativeAdView = findViewById(R.id.yodo1_mas_native);
+//        nativeAdView.setAdListener(new Yodo1MasNativeAdListener() {
+//            @Override public void onNativeAdLoaded(Yodo1MasNativeAdView nativeAdView) {
+//// Code to be executed when an ad finishes loading.
+//                Log.e("yodo","native loaded");
+//
+//            }
+//            @Override public void onNativeAdFailedToLoad(Yodo1MasNativeAdView nativeAdView,
+//                                                         @NonNull Yodo1MasError error) {
+//                Log.e("yodo","native error failed to load" + " " + error.getMessage());
+//            } });
+//        nativeAdView.loadAd();
+//
 
     }
 
@@ -485,7 +566,7 @@ public class MainActivity extends BaseActivity implements ConnectivityReceiver.C
             finish();
 
         } else {
-            Picasso.get().load(user.getPhotoUrl()).placeholder(R.drawable.user).fit().centerCrop().into(customPic);
+            Picasso.with(this).load(user.getPhotoUrl()).placeholder(R.drawable.user).fit().centerCrop().into(customPic);
             un.setText(user.getDisplayName());
             ue.setText(user.getEmail());
             mainName.setText(user.getDisplayName());

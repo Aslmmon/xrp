@@ -2,9 +2,9 @@ package com.pinxrp.xrp.helper;
 
 import android.widget.RelativeLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ironsource.mediationsdk.IronSource;
 import com.pinxrp.xrp.BaseActivity;
 import com.pinxrp.xrp.R;
 import com.pinxrp.xrp.adsImplementation.ADS;
@@ -13,6 +13,11 @@ import com.pinxrp.xrp.adsImplementation.FactoryCreator;
 import com.unity3d.ads.UnityAds;
 import com.unity3d.services.banners.BannerView;
 import com.unity3d.services.banners.UnityBannerSize;
+import com.yodo1.mas.error.Yodo1MasError;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAd;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAdListener;
+import com.yodo1.mas.reward.Yodo1MasRewardAd;
+import com.yodo1.mas.reward.Yodo1MasRewardAdListener;
 
 public class AdsUtils {
     final String TAG = AdsUtils.class.getName();
@@ -104,7 +109,36 @@ public class AdsUtils {
 //        if (UnityAds.isInitialized()) {
 //            UnityAds.show(activity, interstitialPlacement);
 //        }
-        adsTypesChooser.showInterstitial();
+     //   adsTypesChooser.showInterstitial();
+
+        Yodo1MasInterstitialAd.getInstance().setAdListener(new Yodo1MasInterstitialAdListener() {
+
+            @Override
+            public void onInterstitialAdLoaded(Yodo1MasInterstitialAd ad) {
+
+            }
+
+            @Override
+            public void onInterstitialAdFailedToLoad(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
+
+            }
+
+            @Override
+            public void onInterstitialAdOpened(Yodo1MasInterstitialAd ad) {
+
+            }
+
+            @Override
+            public void onInterstitialAdFailedToOpen(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
+                ad.loadAd(activity);
+            }
+
+            @Override
+            public void onInterstitialAdClosed(Yodo1MasInterstitialAd ad) {
+                //ad.loadAd(activity);
+            }
+        });
+        Yodo1MasInterstitialAd.getInstance().loadAndShowAd(activity);
 
     }
 
@@ -113,7 +147,42 @@ public class AdsUtils {
 //        if (UnityAds.isInitialized()) {
 //            UnityAds.show(activity, videoPlacement);
 //        }
-        adsTypesChooser.showRewardVedios();
+
+//        adsTypesChooser.showRewardVedios();
+
+        Yodo1MasRewardAd.getInstance().setAdListener(new Yodo1MasRewardAdListener() {
+
+            @Override
+            public void onRewardAdLoaded(Yodo1MasRewardAd ad) {
+
+            }
+
+            @Override
+            public void onRewardAdFailedToLoad(Yodo1MasRewardAd ad, @NonNull Yodo1MasError error) {
+
+            }
+
+            @Override
+            public void onRewardAdOpened(Yodo1MasRewardAd ad) {
+
+            }
+
+            @Override
+            public void onRewardAdFailedToOpen(Yodo1MasRewardAd ad, @NonNull Yodo1MasError error) {
+                ad.loadAd(activity);
+            }
+
+            @Override
+            public void onRewardAdClosed(Yodo1MasRewardAd ad) {
+                ad.loadAd(activity);
+            }
+
+            @Override
+            public void onRewardAdEarned(Yodo1MasRewardAd ad) {
+
+            }
+        });
+        Yodo1MasRewardAd.getInstance().loadAndShowAd(activity);
 
 
 
@@ -127,8 +196,7 @@ public class AdsUtils {
     }
 
     public boolean isInterstitialAdsReady() {
-//        return UnityAds.isInitialized();
-        return IronSource.isInterstitialReady();
+        return UnityAds.isInitialized();
 
 //        return UnityAds.isReady(interstitialPlacement);
     }

@@ -49,7 +49,7 @@ public class ReferralRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
 
         public void setImage(String image) {
-            Picasso.get().load(image).fit().centerCrop().into(ci);
+            Picasso.with(mContext).load(image).fit().centerCrop().into(ci);
         }
 
         public void setName(String name) {

@@ -35,7 +35,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.3'
     implementation 'com.google.android.gms:play-services-base:18.0.1'
     implementation 'com.google.firebase:firebase-messaging:23.0.0'
-//    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
@@ -43,22 +43,20 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.0.0'
     implementation 'com.github.guilhe:circular-progress-view:1.2.1'
     implementation 'com.android.installreferrer:installreferrer:1.0'
-    implementation 'com.google.firebase:firebase-core:20.0.2'
-    implementation 'com.google.firebase:firebase-ads:17.1.1'
-    implementation 'com.google.firebase:firebase-config:21.0.1'
+//    implementation 'com.google.firebase:firebase-core:20.0.2'
+//    implementation 'com.google.firebase:firebase-ads:17.1.1'
+//    implementation 'com.google.firebase:firebase-config:21.0.1'
     implementation project(path: ':unity-ads')
-    implementation 'com.appodeal.ads:sdk:2.11.0.+'
-    implementation 'com.ironsource.sdk:mediationsdk:7.2.1'
-    implementation ('com.yodo1.mas:lite:4.7.1'){
+//    implementation 'com.appodeal.ads:sdk:2.11.0.+'
+//    implementation 'com.ironsource.sdk:mediationsdk:7.2.1'
+    implementation 'com.yodo1.mas:lite:4.7.1'
+ //   implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation('com.google.android.gms:play-services-auth:20.2.0') {
+        exclude group: 'com.google.android.gms', module: 'module.of.dependecy,withconfllict'
         exclude group:'com.google.firebase:firebase-messaging:23.0.0'
+        exclude group:'com.google.firebase:firebase-config:10.0.1'
+
     }
-    implementation 'com.google.android.gms:play-services-auth:20.2.0'
-//    implementation('com.google.android.gms:play-services-auth:20.2.0') {
-//        exclude group: 'com.google.android.gms', module: 'module.of.dependecy,withconfllict'
-//        exclude group:'com.google.firebase:firebase-messaging:23.0.0'
-//        exclude group:'com.google.firebase:firebase-config:10.0.1'
-//
-//    }
 
 
 }

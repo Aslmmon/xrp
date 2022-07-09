@@ -158,7 +158,7 @@ public class ProfileActivity extends BaseActivity {
         profile_name.setText(u.getDisplayName());
         profile_email.setText(u.getEmail());
 
-        Picasso.get().load(u.getPhotoUrl()).into(ci);
+        Picasso.with(this).load(u.getPhotoUrl()).into(ci);
 
         mDatabase.addValueEventListener(mListener);
 
